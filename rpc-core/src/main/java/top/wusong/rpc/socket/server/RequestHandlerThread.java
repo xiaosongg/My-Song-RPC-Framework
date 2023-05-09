@@ -1,4 +1,4 @@
-package top.wusong.rpc.server;
+package top.wusong.rpc.socket.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,7 @@ import top.wusong.rpc.entity.RpcRequest;
 import top.wusong.rpc.entity.RpcResponse;
 import top.wusong.rpc.registry.ServiceRegistry;
 import top.wusong.rpc.serializer.CommonSerializer;
+import top.wusong.rpc.server.RequestHandler;
 import top.wusong.rpc.socket.util.ObjectReader;
 import top.wusong.rpc.socket.util.ObjectWriter;
 
@@ -15,9 +16,10 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * @author wusong
- * @create 2023/5/9
- **/
+ * 处理RpcRequest的工作线程
+ *
+ * @author ziyang
+ */
 public class RequestHandlerThread implements Runnable {
 
     private static final Logger logger = LoggerFactory.getLogger(RequestHandlerThread.class);
