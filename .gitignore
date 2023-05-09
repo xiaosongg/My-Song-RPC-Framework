@@ -1,0 +1,6 @@
+# 项目排除路径
+/rpc-api/target/
+/rpc-common/target/
+/rpc-core/target/
+/test-client/target/
+/test-server/target/
